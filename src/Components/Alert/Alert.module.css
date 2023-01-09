@@ -1,0 +1,8 @@
+.toastContainer{
+    border: 1px double black;
+
+}
+.toast{
+    padding: 5px 10px;
+    color: black;
+}
