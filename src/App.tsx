@@ -1,19 +1,8 @@
-import React, {useState} from 'react';
-import Alert from "./Components/Alert/Alert";
+import React from "react";
+import { withLayout } from "./Layout/Layout";
 
 function App() {
-    const [alertName,setAlertName] = useState<string>('')
-    const closeAlert = () =>{
-        setAlertName('')
-    }
-    return (
-        <div className="App">
-            <h1>App</h1>
-
-            <button onClick={()=>setAlertName('Click')}> Click </button>
-            {alertName && <Alert name={alertName} closeAlert={closeAlert} />}
-        </div>
-    );
+  return <div className="App"></div>;
 }
 
-export default App;
+export default withLayout(App);

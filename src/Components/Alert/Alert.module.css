@@ -1,8 +1,15 @@
 .toastContainer{
-    border: 1px double black;
+    display: inline-block;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    border: 1px solid rgba(21, 30, 93, 0.83);
+    background: rgba(218, 20, 77, 0.89);
+    border-radius: 4px;
 
 }
 .toast{
     padding: 5px 10px;
-    color: black;
+    color: white;
+    font-size: 14px;
 }
