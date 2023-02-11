@@ -10,7 +10,9 @@ export const AppProvider = ({ children }: PropsWithChildren<IAppContext>) => {
   const [first, setfirst] = useState("");
 
   return (
-    <AppContext.Provider value={{ menu: "123" }}>
+    <AppContext.Provider
+      value={{ menu: " тут будет меню передаём данные через контекст " }}
+    >
       {children}
     </AppContext.Provider>
   );
