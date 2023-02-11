@@ -16,6 +16,7 @@ const Layout = ({children}: LayoutProps) => {
             <Header/>
             <button onClick={() => setAlertName("Click")}> Click</button>
 
+            {children}
             {alertName && <Alert name={alertName} closeAlert={closeAlert}/>}
         </div>
     );
