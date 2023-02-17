@@ -1,6 +1,6 @@
 import { RouteProps } from "react-router-dom";
 import About from "../../Pages/About/About";
-import Login from "../../Pages/Login/LoginForm";
+import Login from "../../Pages/Login/Login";
 import Main from "../../Pages/Main/Main";
 import NotFound from "../../Pages/NotFound/NotFound";
 
