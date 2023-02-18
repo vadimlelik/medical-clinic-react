@@ -1,5 +1,5 @@
 import { useForm, SubmitHandler } from "react-hook-form";
-import Input, { IFormValue } from "../UI/Input/Input";
+import Input, { IFormValue } from "../../shared/UI/Input/Input";
 import styles from "./LoginForm.module.css";
 
 const LoginForm = () => {
