@@ -5,7 +5,8 @@ import {
     ForwardedRef,
 } from "react";
 
-import { FieldError, Path, UseFormRegister } from "react-hook-form";
+import {FieldError, Path, UseFormRegister} from "react-hook-form";
+import styles from './input.module.css'
 
 export interface IFormValue {
     name: string;
@@ -13,26 +14,21 @@ export interface IFormValue {
 }
 
 interface IInputProps
-    extends DetailedHTMLProps<
-        InputHTMLAttributes<HTMLInputElement>,
-        HTMLInputElement
-    > {
+    extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>,
+        HTMLInputElement> {
     label: Path<IFormValue>;
     register: UseFormRegister<IFormValue>;
     required?: boolean;
     error?: FieldError;
 }
 
-const Input = forwardRef(
-    (
-        { error, register, label }: IInputProps,
-        ref: ForwardedRef<HTMLInputElement>
-    ): JSX.Element => {
+const Input = forwardRef(({error, register, label}: IInputProps, ref: ForwardedRef<HTMLInputElement>): JSX.Element => {
         return (
-            <div>
-                <input {...register(label)} />
+            <label htmlFor='input'>
+                <input {...register(label)} className={styles.input} id='input'/>
+                <span className={styles.inputLabel}>{label}</span>
                 {error && <span>{error.message}</span>}
-            </div>
+            </label>
         );
     }
 );
