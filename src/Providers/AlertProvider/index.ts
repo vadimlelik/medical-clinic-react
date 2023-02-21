@@ -1,3 +1,3 @@
-import AlertProvider from "./ui/AlertProvide";
+import AlertProvider from './ui/AlertProvide'
 
-export { AlertProvider };
+export { AlertProvider }

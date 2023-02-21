@@ -1,13 +1,13 @@
-import { useContext, useState } from "react";
-import { ALertContext } from "./AlertContext";
+import { useContext, useState } from 'react'
+import { ALertContext } from './AlertContext'
 
-export function useAlert() {
-  const { alert } = useContext(ALertContext);
+export function useAlert () {
+  const { alert } = useContext(ALertContext)
 
-  const [alertName, setAlertName] = useState(alert);
+  const [alertName, setAlertName] = useState(alert)
 
   const closeAlert = () => {
-    setAlertName("");
-  };
-  return { alertName, closeAlert, setAlertName };
+    setAlertName('')
+  }
+  return { alertName, closeAlert, setAlertName }
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { withLayout } from './Layout/Layout'
 import { AppRouter } from './Providers/router'
 import './index.css'

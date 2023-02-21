@@ -1,15 +1,16 @@
-import React from "react";
-import { Route, Routes } from "react-router-dom";
-import { routerConfig } from "../../../shared/config/routerConfig";
+import React from 'react'
+import { Route, Routes } from 'react-router-dom'
 
-const AppRouter = () => {
+import { routerConfig } from '../../../shared/config/routerConfig'
+
+const AppRouter = (): JSX.Element => {
   return (
-    <Routes>
-      {Object.values(routerConfig).map(({ path, element }) => {
-        return <Route path={path} element={element} key={path} />;
-      })}
-    </Routes>
-  );
-};
+      <Routes>
+          {Object.values(routerConfig).map(({ path, element }) => {
+            return <Route path={path} element={element} key={path} />
+          })}
+      </Routes>
+  )
+}
 
-export default AppRouter;
+export default AppRouter

@@ -21,7 +21,7 @@ const Modal = ({ children, className, isOpen, onClose }: ModalProps): JSX.Elemen
   const timeRef = useRef<ReturnType<typeof setTimeout>>()
 
   const closeHandler = useCallback(() => {
-    if (onClose) {
+    if (onClose !== null) {
       setIsClosing(true)
       timeRef.current = setTimeout(() => {
         onClose()
