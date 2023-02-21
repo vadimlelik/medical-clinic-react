@@ -16,7 +16,6 @@ module.exports = {
     plugins: ['react', 'react-hooks', '@typescript-eslint'],
     rules: {
         'react/display-name': 'off',
-        // "@typescript-eslint/strict-boolean-expressions": "warn",
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
         'react/jsx-filename-extension': [2, {extensions: ['.js', '.jsx', '.tsx']}],

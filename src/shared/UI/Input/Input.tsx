@@ -27,7 +27,7 @@ const Input = forwardRef(({ error, register, label }: IInputProps, ref: Forwarde
       <label htmlFor='input'>
           <input {...register(label)} className={styles.input} id='input'/>
           <span className={styles.inputLabel}>{label}</span>
-          {(error != null) && <span>{error.message}</span>}
+          {(error) && <span>{error.message}</span>}
       </label>
   )
 }
