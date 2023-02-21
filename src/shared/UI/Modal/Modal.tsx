@@ -1,4 +1,4 @@
-import React, {MouseEvent, KeyboardEvent, ReactNode, useEffect, useRef, useState, useCallback} from 'react';
+import React, {MouseEvent, ReactNode, useEffect, useRef, useState, useCallback} from 'react';
 import styles from './Modal.module.css'
 import {classNames} from "../../lib/classNames/classNames";
 
@@ -42,12 +42,11 @@ const Modal = ({children, className, isOpen, onClose}: ModalProps) => {
     useEffect(() => {
 
         if (isOpen) {
-            // @ts-ignore
             window.addEventListener('keydown', onKeyDown)
         }
         return () => {
             clearTimeout(timeRef.current)
-            // @ts-ignore
+
             window.removeEventListener('keydown', onKeyDown)
         }
     }, [isOpen, onKeyDown])
