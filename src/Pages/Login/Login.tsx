@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-has-content */
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import LoginForm from '../../Components/Login/LoginForm'
@@ -11,7 +9,6 @@ interface LoginProps {
   className?: string
 }
 
-// eslint-disable-next-line no-empty-pattern
 const Login = ({}: LoginProps) => {
   const { type } = useParams()
   const [formType, setFormType] = useState<string>(

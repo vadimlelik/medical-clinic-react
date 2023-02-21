@@ -5,7 +5,7 @@ import Header from '../Components/Header/Header'
 import { type LayoutProps } from './LayoutProps'
 import { useAlert } from '../Providers/AlertProvider/lib/useAlert'
 
-const Layout = ({ children }: LayoutProps) => {
+const Layout = ({ children }: LayoutProps): JSX.Element => {
   const { alertName, closeAlert, setAlertName } = useAlert()
 
   return (

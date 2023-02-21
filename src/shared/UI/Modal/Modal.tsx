@@ -1,5 +1,6 @@
-import React, { type MouseEvent, type ReactNode, useEffect, useRef, useState, useCallback } from 'react'
+import { type MouseEvent, type ReactNode, useEffect, useRef, useState, useCallback } from 'react'
 import styles from './Modal.module.css'
+import Portal from '../Portal/Portal'
 import { classNames } from '../../lib/classNames/classNames'
 
 interface ModalProps {
@@ -37,7 +38,7 @@ const Modal = ({ children, className, isOpen, onClose }: ModalProps): JSX.Elemen
   }, [closeHandler])
 
   useEffect(() => {
-    if (isOpen === true) {
+    if (isOpen) {
       window.addEventListener('keydown', onKeyDown)
     }
     return () => {
@@ -51,12 +52,15 @@ const Modal = ({ children, className, isOpen, onClose }: ModalProps): JSX.Elemen
     e.stopPropagation()
   }
   return (
-      <div className={classNames(styles.Modal, mods, [className])}>
-          <div className={styles.overlay} onClick={closeHandler}>
-              <div className={classNames(styles.content, { [styles.content]: isOpen })}
-                  onClick={onContentClick}> {children} </div>
+      <Portal >
+          <div className={classNames(styles.Modal, mods, [className])}>
+              <div className={styles.overlay} onClick={closeHandler}>
+                  <div className={classNames(styles.content, { [styles.content]: isOpen })}
+                      onClick={onContentClick}> {children} </div>
+              </div>
           </div>
-      </div>
+      </Portal>
+
   )
 }
 
