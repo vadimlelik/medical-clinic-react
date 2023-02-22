@@ -3,6 +3,7 @@ import { withLayout } from './Layout/Layout'
 import { AppRouter } from './Providers/router'
 import './index.css'
 import Modal from './shared/UI/Modal/Modal'
+import {Counter} from "./entities";
 
 function App (): JSX.Element {
   const [isOpen, setIsOpen] = useState<boolean>(false)
@@ -12,6 +13,7 @@ function App (): JSX.Element {
           <div className="page">
               <Modal isOpen={isOpen} onClose={() => { setIsOpen(false) }}>lsdfsfdasda</Modal>
               <button onClick={() => { setIsOpen(true) }}>Toggle</button>
+              <Counter/>
               <AppRouter/>
 
           </div>
