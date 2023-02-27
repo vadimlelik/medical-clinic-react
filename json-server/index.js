@@ -20,7 +20,7 @@ server.use(async (req, res, next) => {
 });
 
 
-server.post('/users',(req,res)=>{
+server.post('/login',(req,res)=>{
     return res.json({
         name:'vadim',
         id:1
