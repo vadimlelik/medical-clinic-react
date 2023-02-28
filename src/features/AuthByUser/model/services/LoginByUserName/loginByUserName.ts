@@ -4,7 +4,7 @@ import {User} from "../../types/User";
 
 
 interface LoginByUserNameProps {
-    userName: string,
+    username: string,
     password: string
 }
 
@@ -12,10 +12,10 @@ interface LoginByUserNameProps {
 export const loginByUserName = createAsyncThunk<User, LoginByUserNameProps>(
     'login/loginByUserName',
 
-    async ({userName, password}, thunkAPI) => {
+    async ({username, password}, thunkAPI) => {
         try {
             const response = await axios.post<User>('http://localhost:8000/login', {
-                userName, password
+                username, password
             })
             if (!response) {
                 throw new Error()
