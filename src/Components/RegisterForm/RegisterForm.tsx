@@ -5,12 +5,14 @@ import React, {useCallback} from "react";
 import {loginActions} from "../../features/AuthByUser/model/slice/loginSlice";
 import {getLoginState} from "../../features/AuthByUser/model/selector/getLoginState/getLoginState";
 import {loginByUserName} from "../../features/AuthByUser/model/services/LoginByUserName/loginByUserName";
+import {Button} from "../../shared/UI/Button/Button";
+import {Text} from '../../shared/UI/Text/Text'
 
 const RegisterForm = (): JSX.Element => {
 
     const dispatch = useDispatch()
-    const {username,password} = useSelector(getLoginState)
-    console.log(username)
+    const {username, password, error, isLoading} = useSelector(getLoginState)
+
     const onChangeUserName = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
         dispatch(loginActions.setUserName(e.target.value))
     }, [dispatch])
@@ -26,14 +28,16 @@ const RegisterForm = (): JSX.Element => {
 
     return <div>
         <div className={styles.Register}>
-            <h1>RegisterForm</h1>
+
+            <Text title='Форма Авторнизации'/>
 
             <div>
+
+                {error && <Text text={error}/>}
                 <input name='name' placeholder='name' value={username} onChange={onChangeUserName}/>
                 <input name='password' placeholder='password' value={password} onChange={onChangeUserPassword}/>
+                <Button onClick={onLoginClick} disabled={isLoading}> Submit </Button>
 
-
-                <button onClick={onLoginClick}>Submit</button>
             </div>
 
         </div>

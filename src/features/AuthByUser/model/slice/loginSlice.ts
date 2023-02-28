@@ -7,7 +7,7 @@ const initialState: LoginSchema = {
     username: '',
     password: '',
     isLoading: false,
-    error:''
+    error: ''
 }
 
 export const loginSlice = createSlice({
@@ -29,13 +29,14 @@ export const loginSlice = createSlice({
                 state.isLoading = true
             })
             .addCase(loginByUserName.fulfilled, (state, action) => {
-                state.isLoading = true
-            })
-            .addCase(loginByUserName.rejected, (state, action) => {
                 state.isLoading = false
-                // @ts-ignore
+            })
+            .addCase(loginByUserName.rejected, (state, action: PayloadAction<any>) => {
+                state.isLoading = false
                 state.error = action.payload
             })
+
+
     }
 })
 
